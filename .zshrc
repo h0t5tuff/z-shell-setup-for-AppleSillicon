@@ -143,7 +143,7 @@ geant4() {
 # ╭───────────────────────────────╮
 # │       🧬 remage               │
 # ╰───────────────────────────────╯
-export REMAGE_PREFIX="$HOME/opt/remage"
+export REMAGE_PREFIX="$HOME/REMAGE/install/remage"
 path=("$REMAGE_PREFIX/bin" $path)
 export CMAKE_PREFIX_PATH="$REMAGE_PREFIX/lib/cmake:${CMAKE_PREFIX_PATH:-}"
 export DYLD_FALLBACK_LIBRARY_PATH="$REMAGE_PREFIX/lib:${DYLD_FALLBACK_LIBRARY_PATH:-}"
