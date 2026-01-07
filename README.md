@@ -1,33 +1,21 @@
 What you do is simply put these two files in your home directory! also put sanity in Users/tensor/.local/bin
 
-
-
 --------------this is how I did it and i keep it uptodate-----------
 
 for the file .zshrc:
 
->gh repo create zshell-setup --public --source=~ --remote=origin --push
+> cd ~/Documents/GitHub/
 >
->mkdir -p ~/zshell-setup
+> git clone https://github.com/h0t5tuff/zshell-setup.git>
 >
->mv ~/.zshrc ~/zshell-setup/.zshrc
+> cd
 >
->cd ~/zshell-setup
+> mv ~/.zshrc ~/.zshrc.backup && rm -i ~/.zshrc
 >
->git init
+> ln -s ~/Documents/GitHub/zshell-setup/.zshrc ~/.zshrc
 >
->git add .zshrc
->
->git commit -m "Track .zshrc"
->
->ln -s ~/zshell-setup/.zshrc ~/.zshrc
->
->git push
+> z
 
+for the file sanity:
 
-for the file sanity: 
-
-same shit 
-
-
-
+same shit
