@@ -26,7 +26,6 @@ alias dds='ls -hFGlast -tr; \
   echo -n "Size: "; du -sh . | cut -f1; \
   echo -n " Entries (curr): "; find . -mindepth 1 -maxdepth 1 | wc -l; \
   echo -n " Entries (all): "; find . -mindepth 1 | wc -l'
-alias z='source ~/.zshrc || echo "shit"'
 alias werb='brew update && brew upgrade && brew autoremove && brew cleanup && brew doctor'
 alias vscodefix='echo "Run: Cmd+Shift+P → Shell Command: Install `code` in PATH"'
 #ROOT
@@ -43,6 +42,7 @@ cpycaen() { scp daq:~/ROOT/bacon2Data/compiled/caenData/"$1" . }
 cpyg1() { scp daq:~/ROOT/bacon2Data/compiledGold/"$1" . }
 cpyg2() { scp daq:~/ROOT/bacon2Data/bobjGold/"$1" . }
 cpybm() { scp "$1" daq:/home/bacon/BaconMonitor/ }
+export SSH_DIR=~/Documents/GitHub/ssh-setup
 
 # ╭───────────────────────────────╮
 # │      ✅ zsh PATH handling     │

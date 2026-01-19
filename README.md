@@ -2,7 +2,7 @@ What you do is simply put these two files in your home directory! also put sanit
 
 --------------this is how I did it and i keep it uptodate-----------
 
-for the file .zshrc:
+### for the file .zshrc:
 
 > cd ~/Documents/GitHub/
 >
@@ -14,12 +14,16 @@ for the file .zshrc:
 >
 > ln -s ~/Documents/GitHub/zshell-setup/.zshrc ~/.zshrc
 >
-> z
+> then,
+>
+> source ~/.zshrc
 
-for the file sanity:
+### for the file sanity:
 
-same shit, then,
-
+> same shit,
+>
+> then,
+> ?
 > chmod +x ~/sanity
 >
 > ln -s ~/sanity ~/.local/bin/sanity
