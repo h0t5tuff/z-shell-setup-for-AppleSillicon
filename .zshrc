@@ -42,7 +42,6 @@ cpycaen() { scp daq:~/ROOT/bacon2Data/compiled/caenData/"$1" . }
 cpyg1() { scp daq:~/ROOT/bacon2Data/compiledGold/"$1" . }
 cpyg2() { scp daq:~/ROOT/bacon2Data/bobjGold/"$1" . }
 cpybm() { scp "$1" daq:/home/bacon/BaconMonitor/ }
-export SSH_DIR=~/Documents/GitHub/ssh-setup
 
 # ╭───────────────────────────────╮
 # │      ✅ zsh PATH handling     │
@@ -79,14 +78,14 @@ arm64() {
   path=(/opt/homebrew/opt/python@3.12/libexec/bin /opt/homebrew/opt/python@3.12/bin $path)
   export Python3_EXECUTABLE="/opt/homebrew/opt/python@3.12/bin/python3.12"
 
-  # User
-  path=("$HOME/.local/bin" $path)
-
   # ROOT
   pushd /opt/homebrew > /dev/null
   . bin/thisroot.sh
   popd > /dev/null
   export ROOT_DIR="/opt/homebrew/opt/root/share/root/cmake"
+
+  # User
+  path=("$HOME/.local/bin" $path)
 
   # Ensure PATH uniqueness
   typeset -gU path
@@ -110,12 +109,21 @@ amd64() {
 }
 
 # ╭───────────────────────────────╮
-# │         🧬 Pipx               │
+# │     🧬 Default Env            │
 # ╰───────────────────────────────╯
-##export PIPX_DEFAULT_PYTHON="/opt/homebrew/opt/python@3.12/libexec/bin/python"
 export PIPX_DEFAULT_PYTHON=/opt/homebrew/opt/python@3.12/bin/python3.12
 alias venv="source ~/venvs/myenv/bin/activate"
 alias jn='pipx run notebook'
+if [[ -o interactive ]]; then
+  arm64 
+fi
+
+
+
+
+
+
+
 
 # ╭───────────────────────────────╮
 # │         🧬 HDF5               │
@@ -124,7 +132,6 @@ export HDF5_ROOT="$HOME/HDF5/install"
 export HDF5_DIR="$HDF5_ROOT/cmake"
 path=("$HDF5_ROOT/bin" $path)
 export PKG_CONFIG_PATH="$HDF5_ROOT/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
-export DYLD_LIBRARY_PATH="$HDF5_ROOT/lib:${DYLD_LIBRARY_PATH:-}"
 
 # ╭───────────────────────────────╮
 # │     🧬 Geant4                 │
@@ -151,14 +158,13 @@ export REMAGE_HOME="$HOME/REMAGE"
 export REMAGE_PREFIX="$REMAGE_HOME/install/remage"
 path=("$REMAGE_PREFIX/bin" $path)
 
-# ╭───────────────────────────────╮
-# │     🧬 Default Env            │
-# ╰───────────────────────────────╯
+
 export CMAKE_PREFIX_PATH="$HDF5_ROOT:$REMAGE_PREFIX/lib/cmake:$BXDECAY0_PREFIX:${CMAKE_PREFIX_PATH:-}"
 export DYLD_FALLBACK_LIBRARY_PATH="$HDF5_ROOT/lib:$GEANT4_BASE/lib:$BXDECAY0_PREFIX/lib:$REMAGE_PREFIX/lib:${DYLD_FALLBACK_LIBRARY_PATH:-}"
-if [[ -o interactive ]]; then
-  arm64 
-fi
+
+
+
+
 
 
 
