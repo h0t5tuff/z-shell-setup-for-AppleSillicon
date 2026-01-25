@@ -167,7 +167,7 @@ export DYLD_FALLBACK_LIBRARY_PATH="$HDF5_ROOT/lib:$GEANT4_BASE/lib:$BXDECAY0_PRE
 # ╭───────────────────-----------────────────╮
 # │         🧱 ROOT sim: bacon2Data          │
 # ╰──────────────────────-----------─────────╯
-export BACONHOME ="$HOME/Documents/ROOT"
+export BACONHOME="$HOME/Documents/ROOT"
 export BOBJ="$HOME/Documents/ROOT/bacon2Data/bobj"
 export COMPILED="$HOME/Documents/ROOT/bacon2Data/compiled"
 path=("$BOBJ" "$COMPILED" "$BACONHOME" $path)
