@@ -6,32 +6,26 @@ What you do is simply put:
 
 --------------this is how I did it and i keep it uptodate-----------
 
-### for .zshrc:
-
-> cd ~/Documents/GitHub/
+> cd $HOME/Documents/GitHub/
 >
 > git clone https://github.com/h0t5tuff/zshell-setup.git>
->
-> cd
->
+
+### for .zshrc:
+
 > mv ~/.zshrc ~/.zshrc.backup && rm -i ~/.zshrc
 >
 > ln -s ~/Documents/GitHub/zshell-setup/.zshrc ~/.zshrc
->
-> then,
->
-> source ~/.zshrc
 
 ### for config:
 
+> mv ~/.ssh/config ~/.ssh/config.backup && rm -i ~/.ssh/config
 >
+> ln -s ~/Documents/GitHub/zshell-setup/.ssh/config ~/.ssh/config
 
 ### for sanity:
 
-> same shit,
->
-> then,
-> ?
-> chmod +x ~/sanity
+> ln -s ~/Documents/GitHub/zshell-setup/sanity ~/sanity
 >
 > ln -s ~/sanity ~/.local/bin/sanity
+>
+> chmod +x ~/sanity
