@@ -1,8 +1,12 @@
-What you do is simply put these two files in your home directory! also put sanity in Users/tensor/.local/bin
+What you do is simply put:
+
+> - .zshrc in $HOME dir
+> - config in $HOME/.ssh dir
+> - sanity in $HOME and $HOME/.local/bin dirs
 
 --------------this is how I did it and i keep it uptodate-----------
 
-### for the file .zshrc:
+### for .zshrc:
 
 > cd ~/Documents/GitHub/
 >
@@ -18,7 +22,11 @@ What you do is simply put these two files in your home directory! also put sanit
 >
 > source ~/.zshrc
 
-### for the file sanity:
+### for config:
+
+>
+
+### for sanity:
 
 > same shit,
 >
