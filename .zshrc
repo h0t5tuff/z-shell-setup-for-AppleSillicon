@@ -37,7 +37,6 @@ r() {
   root -l "$1" -e 'new TBrowser();'
 }
 # DAQ
-alias daq='ssh -X daq'
 cpycaen() { scp daq:~/ROOT/bacon2Data/compiled/caenData/"$1" . }
 cpyg1() { scp daq:~/ROOT/bacon2Data/compiledGold/"$1" . }
 cpyg2() { scp daq:~/ROOT/bacon2Data/bobjGold/"$1" . }
